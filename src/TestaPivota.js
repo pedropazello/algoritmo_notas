@@ -22,11 +22,13 @@ function quebraNoPivo(notas, inicial, termino) {
     const atual = notas[analisando]
 
     if (atual.nota <= pivo.nota) {
+      troca(notas, analisando, menoresEncontrados)
       menoresEncontrados++
     }
   }
 
   troca(notas, termino - 1, menoresEncontrados)
+  return menoresEncontrados
 }
 
 function troca(notas, de, para) {
